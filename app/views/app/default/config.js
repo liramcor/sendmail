@@ -3,6 +3,7 @@ requirejs.config({
     "shim": {
         "bootstrap": { "deps": ["jquery"] },
         "moment-local": { "deps": ["moment"] },
+        "fileupload" : { "deps" : ["jquery","jquery.ui.widget"] }
     },
     "paths": {
         "jquery": ["../vendor/jquery.min"],
@@ -13,7 +14,9 @@ requirejs.config({
         "moment": ["../vendor/moment"],
         "moment-local": ["../vendor/moment-with-locales.min"],
         "react": "../vendor/react",
-        "JSXTransformer": "../vendor/JSXTransformer"
+        "JSXTransformer": "../vendor/JSXTransformer",
+        "jquery.ui.widget" : "../vendor/jquery.ui.widget",
+        "fileupload" : "../vendor/jquery.fileupload"
     }
 
 });

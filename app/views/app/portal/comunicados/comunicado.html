@@ -1,7 +1,25 @@
 {% extends "../default.html" %}
 
 {% block content %}
-<div id="myDiv"></div>
+<form name="formupload" id="formupload" method="post" >
+	<label>Nombre del comunicado</label><br />
+	<input type="text" name="txtNombre" id="txtNombre" required><br />
+	<label>Descripción del comunicado</label><br />
+	<input type="text" name="txtDesc" id="txtDesc" required><br />
+	<label>Correo del responsable</label><br />
+	<input type="email" name="txtCorreo" id="txtCorreo" required><br /><br />
+	<div id="iu-file">
+		<input type="file" name="uploadfile" id="uploadfile" accept=".zip" required><br />
+	</div>
+	<div id="iu-progress" style="visibility:hidden; height:0px">
+		<div id="iu-progressbar"></div>
+	</div>
+	<div id="iu-error" class="bg-danger" style="visibility:hidden; height:0px">No se pudo enviar el comunicado, porfavor intentelo mas tarde</div>
+	<div id="iu-message" class="bg-success" style="visibility:hidden; height:0px">Archivo subido</div><br />
+	<div id="iu-button" style="visibility:hidden">
+		<button id="btnCargar">Cargar</button>
+	</div>
+</form>
 {% endblock %}
 
-{% block requirecode %}require(["portal/index"]);{% endblock %}
+{% block requirecode %}require(["portal/comunicado"]);{% endblock %}
